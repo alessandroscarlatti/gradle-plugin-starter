@@ -1,1 +1,3 @@
+package LiveTestProject
+
 rootProject.name = 'live-test-project'

@@ -1,3 +1,4 @@
+package LiveTestProject
 // ============================================================================
 // Everything in this build.gradle is part of the 'basic test project'
 // Specific test scenarios can go in 'test.gradle'.
