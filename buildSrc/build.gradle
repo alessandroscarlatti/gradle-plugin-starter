@@ -1,11 +1,7 @@
-//import com.scarlatti.test.util.TestProjectsPlugin
-
 group 'com.scarlatti'
 
 apply plugin: 'groovy'
 apply plugin: 'java-gradle-plugin'
-apply plugin: 'idea'
-//apply plugin: TestProjectsPlugin
 
 sourceCompatibility = 1.8
 
@@ -21,13 +17,6 @@ configurations.all {
         force 'org.codehaus.groovy:groovy-all:2.4.11'
     }
 }
-
-//jar {
-//    baseName = project.properties.pluginArtifactName
-//}
-
-// gradle.properties are not available for nested builds!
-println "property: " +  project.findProperty("pluginName")
 
 dependencies {
     testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
@@ -55,12 +44,3 @@ task pluginDistributionAssemble {
     group = 'distribution'
     description = 'Put both the plugin .jar and .zip archives in the distribution dir.'
 }
-
-//testProjects {
-//    test(name: "simple test", projectDir: "src/test/resources/LiveTestProject") {
-//        tasks = ['sillyTest']
-//    }
-//    test(name: "silly test", projectDir: "src/test/resources/LiveTestProject")
-//    test name: 'template test', template: 'src/test/resources/LiveTestProject', gradle: 'src/test/resources/sampleTest.gradle'
-//    test name: 'ork test', template: 'src/test/resources/LiveTestProject', gradle: 'src/test/resources/greetingTest.gradle'
-//}
