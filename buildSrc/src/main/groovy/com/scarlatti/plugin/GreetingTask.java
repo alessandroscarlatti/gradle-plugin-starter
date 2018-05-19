@@ -6,6 +6,7 @@ import org.gradle.api.tasks.TaskAction;
 public class GreetingTask extends DefaultTask implements Runnable {
     private String message;
     private String recipient;
+    private int sillinessCode;
 
     @TaskAction
     @Override
@@ -19,4 +20,11 @@ public class GreetingTask extends DefaultTask implements Runnable {
     public String getRecipient() { return recipient; }
     public void setRecipient(String recipient) { this.recipient = recipient; }
 
+    public int getSillinessCode() {
+        return sillinessCode;
+    }
+
+    public void setSillinessCode(int sillinessCode) {
+        this.sillinessCode = sillinessCode;
+    }
 }

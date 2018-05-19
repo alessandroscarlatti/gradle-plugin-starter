@@ -1,1 +1,2 @@
 rootProject.name = 'gradle-plugin-starter'
+include 'pluginBuild'

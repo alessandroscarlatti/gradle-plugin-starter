@@ -12,4 +12,5 @@ task silly() {
 
 ork {
     message = "qwer"
+    sillinessCode = 123
 }

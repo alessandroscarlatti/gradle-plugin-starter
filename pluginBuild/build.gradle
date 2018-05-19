@@ -1,0 +1,14 @@
+apply from: '../buildSrc/build.gradle'
+
+// necessary in order to build from the "buildSrc" project.
+sourceSets {
+    main {
+        groovy {
+            srcDirs = ["../buildSrc/src/main/groovy"]
+        }
+
+        resources {
+            srcDirs = ["../buildSrc/src/main/resources"]
+        }
+    }
+}
