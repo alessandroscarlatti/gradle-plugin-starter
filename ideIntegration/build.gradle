@@ -1,0 +1,15 @@
+import com.scarlatti.plugin.GreetingPlugin
+
+apply plugin: GreetingPlugin
+
+task silly() {
+    doLast {
+        println "asdf"
+    }
+}
+
+ork {
+    message = "qwer"
+    sillinessCode = 123
+    penguinName = "asdf"
+}

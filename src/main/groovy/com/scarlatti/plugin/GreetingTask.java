@@ -7,6 +7,7 @@ public class GreetingTask extends DefaultTask implements Runnable {
     private String message;
     private String recipient;
     private int sillinessCode;
+    private String penguinName;
 
     @TaskAction
     @Override
@@ -26,5 +27,13 @@ public class GreetingTask extends DefaultTask implements Runnable {
 
     public void setSillinessCode(int sillinessCode) {
         this.sillinessCode = sillinessCode;
+    }
+
+    public String getPenguinName() {
+        return penguinName;
+    }
+
+    public void setPenguinName(String penguinName) {
+        this.penguinName = penguinName;
     }
 }

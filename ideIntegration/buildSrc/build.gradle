@@ -1,0 +1,12 @@
+apply from: '../../build.gradle'
+
+// necessary in order to build from the "buildSrc" project.
+// (or if it got more complex, I could use a function to translate
+// the original source sets from the original relative locations
+// to the location relative to this test project.
+sourceSets {
+    main {
+        groovy.srcDirs = ["../../src/main/groovy"]
+        resources.srcDirs = ["../../src/main/resources"]
+    }
+}

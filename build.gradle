@@ -1,16 +1,39 @@
-import com.scarlatti.plugin.GreetingPlugin
-
 apply plugin: 'groovy'
+apply plugin: 'java-gradle-plugin'
 
-apply plugin: GreetingPlugin
+group 'com.scarlatti'
 
-task silly() {
-    doLast {
-        println "asdf"
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile('org.spockframework:spock-core:1.1-groovy-2.4') {
+        exclude module: 'groovy-all'
     }
 }
 
-ork {
-    message = "qwer"
-    sillinessCode = 123
+task pluginDistributionZip(type: Zip) {
+    group = 'distribution'
+    description = 'Build the distribution zip for this plugin.'
+    dependsOn build
+    from jar.outputs.files
+    baseName = jar.baseName
+    destinationDir = file("/build/distributions")
+}
+
+task pluginDistributionJar(type: Copy) {
+    group = 'distribution'
+    description = 'Copy the plugin jar to the distribution dir.'
+    dependsOn build
+    from jar.outputs.files
+    destinationDir = file("/build/distributions")
+}
+
+task pluginDistributionAssemble {
+    dependsOn = [pluginDistributionZip, pluginDistributionJar]
+    group = 'distribution'
+    description = 'Put both the plugin .jar and .zip archives in the distribution dir.'
 }
